@@ -1,5 +1,3 @@
-import 'package:funciones5a/funciones5a.dart' as funciones5a;
-
 
 void main(List<String> arguments) {
   var resultado = division1();
@@ -29,9 +27,32 @@ int division1() {
 
 void saludo1(String x, int y) {
   //funcion void con parametros posicionales obligatorios
-  print('Hola $x, estas en el año $y');
+ print('Hola $x, estas en el año $y');
 }
 
 void saludo2(String x, [int y = 2023]) {
   //Funcion  void con parametros posicionales, y una no es obligatorio
- }
+  //Siguen siendo posicionales; respetar el orden
+  //definir los parametros opcionales al final
+  print('saludo2:Hola $x,estas en el año $y');
+}
+
+void saludo3(String? nombre, [String mensaje = 'hola']) {
+  //funcion con parametros posicionales
+  //parametro nombre, puede enviar un valor String o un nulo
+  // parametro mensaje, puede no enviarse, pero vale inicialmente Hola
+  print('Saludo3: mensaje $mensaje $nombre');
+}
+
+void saludo4({required int y, required String n, required String m}) {
+//Funcion con parametros nombrados.
+//No importa el orden en que envies los parametros , pero debes enviarlos
+
+  print('$m $n,Bienvenido al año $y');
+}
+
+void saludos5({String n = 'desconocido',String? m}) {
+  //funcion con parametros nombrados
+  //no importa el orden, y pueden ser  opcionales
+  print('saludos5: $m $n');
+}
